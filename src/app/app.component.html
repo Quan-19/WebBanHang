@@ -1,7 +1,4 @@
 <app-navbar></app-navbar>
-
-<app-product-card></app-product-card>
-
 <div class="Container">
   @for (product of this.storeService.products; track $index) {
     <app-product-card [product]="product"></app-product-card>
@@ -9,9 +6,9 @@
   }
 </div>
 
-<h1>Giỏ hàng</h1>
+<h1 class="cart">Giỏ hàng</h1>
 @for (product of this.storeService.cart; track $index) {
-  <app-cart [product]="product"></app-cart>
+  <app-cart class="cart-container" [product]="product"></app-cart>
 }
 <app-total-cost></app-total-cost>
 `

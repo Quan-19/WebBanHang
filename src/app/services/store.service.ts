@@ -25,7 +25,7 @@ export class StoreService {
       name: 'Samsung Galaxy S21 Ultra',
       price: 28990000,
       quantity: 10,
-      description: 'Samsung Galaxy S21 Ultra 5G 128GB - Chính hãng VN/A',
+      description: 'Samsung Galaxy S21 Ultra 5G 128GB-Chính hãng',
     },
     {
       id: 3,
@@ -49,8 +49,17 @@ export class StoreService {
       name: 'Xiaomi Mi 11',
       price: 13990000,
       quantity: 10,
-      description: 'Xiaomi Mi',
-    }
+      description: 'Xiaomi Mi 11 128GB - Chính hãng VN/A',
+    },
+    {
+      id: 6,
+      image: '../assets/iphone-12-pro-max-graphite-hero.png',
+      name: 'iPhone 12 Pro Max',
+      price: 32990000,
+      quantity: 10,
+      description: 'iPhone 12 Pro Max 128GB - Chính hãng VN/A',
+    },
+
   ];
 
   cart: ProductModel[] = []
@@ -110,5 +119,18 @@ export class StoreService {
     this.total = this.cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
     return this.total;
   }
+  checkout() {
+    if (this.cart.length === 0) {
+      alert('Giỏ hàng của bạn đang trống. Vui lòng thêm một số sản phẩm vào giỏ hàng trước khi thanh toán');
+      return;
+    }
 
+    const total = this.totalcost();
+    const confirmed = confirm(`Tổng số tiền của bạn là ${total} VND. Bạn có muốn tiến hành thanh toán không?`);
+
+    if (confirmed) {
+      this.cart = [];
+      alert('Cám ơn đã mua hàng!');
+    }
+  }
 }

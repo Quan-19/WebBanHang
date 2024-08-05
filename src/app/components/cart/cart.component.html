@@ -1,6 +1,6 @@
 <div class="cart-container">
   <p>{{ product.name }}</p>
-  <p>{{ product.quantity }}</p>
-  <p>{{ product.price }}</p>
+  <p>Số lượng:{{ product.quantity }}</p>
+  <p>Giá:{{ product.price }}đ</p>
   <button (click)="storeService.deletecart(product)">Xóa</button>
 </div>

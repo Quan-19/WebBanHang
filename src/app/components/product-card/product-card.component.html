@@ -3,8 +3,8 @@
   <p>{{ product.name}}</p>
   <p>{{product.description}}</p>
   <p> Số lượng:{{ product.quantity }}</p>
-  <p> Giá:{{product.price}}</p>
-  <button [disabled]="!product.quantity" (click)="this.storeService.addtocart(product)">Add to Card
+  <p> Giá:{{product.price}}đ</p>
+  <button id="buttonAdd" [disabled]="!product.quantity" (click)="this.storeService.addtocart(product)">Add to Card
   </button>
 
 </div>

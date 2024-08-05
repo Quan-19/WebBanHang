@@ -1,0 +1,28 @@
+.total-container {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+
+.cost {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000000;
+}
+.btn{
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #4CAF50;
+  }
+}

@@ -12,4 +12,5 @@ export class TotalCostComponent {
     @Input() total !: number ;
     constructor(public storeService: StoreService) {
     }
+
 }
