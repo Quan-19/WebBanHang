@@ -1,36 +1,17 @@
-<h1>Đây là cửa hàng của Quân</h1>
+<app-navbar></app-navbar>
 
-<div id="container">
-  <div id="product-container">
-    @for (product of products; track $index) {
-    <div id="product-card">
-      <h2>{{ product.name }}</h2>
-      <h2>Giá:{{ product.price }}đ</h2>
-      <h2>Số lượng:{{ product.inStock }}</h2>
+<app-product-card></app-product-card>
 
-      <button
-        id="buttonAdd"
-        [disabled]="product.inStock == 0 ? true : false"
-        (click)="addToCart($index)"
-      >
-        Thêm vào giỏ
-      </button>
-    </div>
+<div class="Container">
+  @for (product of this.storeService.products; track $index) {
+    <app-product-card [product]="product"></app-product-card>
 
-    }
-  </div>
-  <div id="cart-container">
-    @for (product of cart; track $index) {
-    <div id="product-in-cart">
-      <p>{{ product.name }}</p>
-      <p>Giá:{{ product.price }}đ</p>
-      <p>Số lượng:{{ product.quantity }}</p>
-      <button (click)="removeFromCart($index)">Xóa</button>
-    </div>
-    }
-    <div>
-      <p>Tổng tiền: {{ calculateTotal() }} VND</p>
-      <button (click)="checkout()">Thanh toán</button>
-    </div>
-  </div>
+  }
 </div>
+
+<h1>Giỏ hàng</h1>
+@for (product of this.storeService.cart; track $index) {
+  <app-cart [product]="product"></app-cart>
+}
+<app-total-cost></app-total-cost>
+`
